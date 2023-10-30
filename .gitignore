@@ -1,0 +1,4 @@
+.vscode
+plt/__pycache__
+plt/fig
+*.txt
