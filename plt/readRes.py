@@ -30,8 +30,14 @@ class PltConfig:
         self.resfilePath = _settings["resfilepath"]
         self.reffilePath = _settings["reffilepath"]
 
+        # 全局作图参数
+        self.fontName = _settings["fontName"]
+        self.fontSize = _settings["fontSize"]
+        self.dpi = _settings["dpi"]
+
         # 作图参数
-        self.SingleAxesConfig = _settings["SingleAxesConfig"]
+        self.SingleAxesSinglePlotConfig = _settings["SingleAxesSinglePlotConfig"]
+        self.SingleAxesMulPlotConfig = _settings["SingleAxesMulPlotConfig"]
         self.MulAxesConfig = _settings["MulAxesConfig"]
 
 

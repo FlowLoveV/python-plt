@@ -17,10 +17,18 @@ def norm2(array: np.ndarray) -> np.ndarray:
 
 
 def formatDiffYaw(array: np.ndarray) -> np.ndarray:
+    """对差分航向角进行归一化，归一化的逻辑为：差分值绝对值在350~370度的航向角，会加上或者减去360，使其在0附近
+
+    Args:
+        array (np.ndarray): _description_
+
+    Returns:
+        np.ndarray: _description_
+    """
     return [i + 360 if abs(i + 360) < 10.0 else i - 360 if abs(i - 360) < 10.0 else i for i in array]
 
 
-def process_vdr_test(res: np.ndarray, ref: np.ndarray) -> list[np.ndarray]:
+def process_vdr_test(res: np.ndarray, ref: np.ndarray) -> list:
     # 位置之差
     resPos = blh2xyz(res[:, 43:46])
     refPos = blh2xyz(ref[:, 1:4])

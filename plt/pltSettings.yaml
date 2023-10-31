@@ -7,25 +7,32 @@ reffilepath: "E:\\Project\\didi\\Phase2\\DATA\\20230602155520\\final_gnss_analys
 # 分隔符配置，空格为默认分隔符，只需添加即可
 delimiter: [",", ":", ";"]
 
-# 作图参数设置
+# 全局作图参数设置
+# Anaconda\Lib\site-packages\matplotlib\mpl-data\fonts\ttf 中为matplotlib可选字体，可自行上网下载需要的
+fontName: "FangSong"
+fontSize: 12
+dpi: 500
 
 ## 这里给出不同做图类型的属性配置， 目前有： 曲线图
 
-## plot 曲线图配置
+## single axes single plot settings
 # type: "plot"
 # title: "abc"
 # xlabel: "x"
 # ylabel: "y"
-# linestyle: "--"
-# linewidth: 1
-# marker: "o"
-# markersize: 1
-# color: "b"
-# figname:
+# linestyle: "--"          linestyle  说明 :  "-" 实线,  "--" 虚线,  ":" 点线,  "-." 点划线,  "" 无线(只标记)
+# linewidth: 1             linewidth  说明 :  线型大小，自行调节即可
+# marker: "o"              marker     说明 :  ">" 左箭头,  "<"右箭头, "."点, "o"圆圈, "v"倒三角, "^"正三角,
+#                                             "1"上箭头, "2"下箭头, "s"正方形, "p"五边形, "*"星号, "+"加号, "x"乘号, "D"菱形
+# markersize: 1            markersize 说明 :  标记大小，自行调节即可
+# color: "b"               color      说明 :  "r"红色, "g"绿色, "b"蓝色, "c"青色, "m"洋红色, "y"黄色, "k"黑色, "w"白色
+# figname:                 figname    说明 :  图片存储路径
 
-##################################################        单Axes作图设置         #############################################
-SingleAxesConfig:
-  # 图一
+## single axes multiple plot settings
+
+##################################################  single Axes single plot 作图设置 #############################################
+SingleAxesSinglePlotConfig:
+  # 配置一
   - type: "plot"
     title: "定位误差"
     xlabel: "x(s)"
@@ -35,9 +42,9 @@ SingleAxesConfig:
     marker: "o"
     markersize: 1
     color: "b"
-    figname: "E:\\mashuo\\python\\plt\\fig\\位置误差.png"
+    figname: "E:\\mashuo\\python-plt\\plt\\fig\\位置误差.png"
 
-  # 图二
+  # 配置二
   - type: "plot"
     title: "速度误差"
     xlabel: "x(s)"
@@ -47,9 +54,9 @@ SingleAxesConfig:
     marker: "o"
     markersize: 1
     color: "b"
-    figname: "E:\\mashuo\\python\\plt\\fig\\速度误差.png"
+    figname: "E:\\mashuo\\python-plt\\plt\\fig\\速度误差.png"
 
-  # 图三
+  # 配置三
   - type: "plot"
     title: "航向角误差"
     xlabel: "x(s)"
@@ -59,13 +66,33 @@ SingleAxesConfig:
     marker: "o"
     markersize: 1
     color: "b"
-    figname: "E:\\mashuo\\python\\plt\\fig\\航向角误差.png"
+    figname: "E:\\mashuo\\python-plt\\plt\\fig\\航向角误差.png"
+
+################################################## single Axes multiple plot 作图设置 #############################################
+# 参数配置说明
+# num:     坐标区内plot数目
+# legend:  图例
+
+SingleAxesMulPlotConfig:
+  - type: "plot"
+    num: 3
+    title: "x,y,z方向位置误差"
+    xlabel: "x(s)"
+    ylabel: "y(m)"
+    linestyle: ["-", "-", "-"]
+    linewidth: [1, 1, 1]
+    marker: ["o", "o", "o"]
+    markersize: [1, 1, 1]
+    color: ["r", "g", "b"]
+    legend: ["x", "y", "z"]
+    figname: "E:\\mashuo\\python-plt\\plt\\fig\\xyz方向位置误差.png"
 
 ############################################## 多Axes作图设置(坐标区属性设置按行排列,即先从左到右，后从上到下) #########################
 # 目前尚未扩展
 MulAxesConfig:
   # 图一
-  - AxesShape: [2, 2]
+  - AxesShape: [3, 1]
+    type: "plot"
     title: ["1", "2", "3", "4"]
     xlabel: ["x", "x", "x", "x"]
     ylabel: ["y", "y", "y", "y"]
