@@ -2,3 +2,4 @@
 plt/__pycache__
 plt/fig
 *.txt
+plt/pltSettings.yaml

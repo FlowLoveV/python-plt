@@ -1,8 +1,8 @@
 # 结果文件路径
-resfilepath: "E:\\Project\\didi\\Phase2\\DATA\\20230602155520\\final_vdr_analysis.txt"
+resfilepath: "/home/ubuntu/didi_data/20230606141455/final_vdr_analysis.txt"
 
 # 参考结果文件路径
-reffilepath: "E:\\Project\\didi\\Phase2\\DATA\\20230602155520\\final_gnss_analysis.txt"
+reffilepath: "/home/ubuntu/didi_data/20230606141455/final_gnss_analysis.txt"
 
 # 分隔符配置，空格为默认分隔符，只需添加即可
 delimiter: [",", ":", ";"]
